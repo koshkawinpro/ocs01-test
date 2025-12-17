@@ -1,56 +1,27 @@
-**ocs01-test**
+Benchmark Summary
 
-rust cli for testing ocs01 smart contract
+Benchmarks were performed to test sequential throughput of both regular and encrypted transactions. Each result includes performance timing, log file references, and SHA-256 hash verification for reproducibility.
 
-**what it does**
+My wallet: octEEhBeAiATTV9bfTyyAfUSb4AoQfii8XGAtfjBXNQeFBA
 
--   tests all ocs01 contract methods
--   interactive menu for easy navigation
--   shows results instantly for view methods
--   handles tx signing for call methods
+1. Regular Sequential Benchmark
 
-**works on**
+34230134502d5cc7bb5afbb26a82e769d598b591cfd27cecd60dda511d481658  benchmark_regular.log
 
--   linux
--   macos
--   windows
+2. Encrypted Sequential Benchmark
 
-**install rust (if not installed)**
+7d2e9c6e31007b13906fa0db97c1fab45d62ff63c08b8a0828cc5af48c176b68  benchmark_encrypted.log
 
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source $HOME/.cargo/env
-```
+✅ Overall Assessment
 
-**build from source**
+All contract deployments and benchmarks executed successfully. Log hashes confirm integrity and reproducibility. Results indicate:
 
-```bash
-git clone https://github.com/octra-labs/ocs01-test.git
-cd ocs01-test
-cargo build --release
-```
+Contract deployment pipeline is functioning reliably.
 
-**setup**
+Sequential regular TX throughput operates as expected.
 
-```bash
-# copy contract interface
-cp EI/exec_interface.json .
-```
+Encrypted TX sequencing executes correctly, validating encrypted execution pathways.
 
-**required files in same directory**
 
--   wallet.json - create with your credentials
--   exec_interface.json - copy from EI/ folder
+Thanks!
 
-**run**
-
-you must copy the release binary to your cli folder and also copy the EI file (execution interface file) to the same location 
-
-the release binary is located in this folder after successful build. 
-```bash
-./target/release/ocs01-test
-```
-
-*for this task the ei file contains the interface for contract at address octBUHw585BrAMPMLQvGuWx4vqEsybYH9N7a3WNj1WBwrDn, do not modify it*
-
-after running, follow the menu to interact with the contract
